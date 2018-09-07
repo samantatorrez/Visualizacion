@@ -1,0 +1,22 @@
+.logo {
+	width: 25px;
+	height: 25px;
+}
+.navbar-custom {
+    background-color: #00007B;
+}
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text {
+    color: rgba(255,255,255,255);
+}
+#canvas {
+    border: 2px solid black
+  }
+#inicioContent {
+ 	background-color: #f8f9fa !important;
+ 	height: 100px;
+ }
+canvas { position: absolute; }
+img.selectedIMG{
+    border: 2px solid blue;
+}

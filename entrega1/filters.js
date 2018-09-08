@@ -35,11 +35,12 @@ $( document ).ready(function() {
 			ctx.putImageData(imageData, 0,0);
 		},
 		brighten : function (imageData) {
+			let light = document.getElementById("brighten").value ;
 			let d=imageData.data;
 			for (let j = 0; j < d.length; j += 4){
-		    	d[ j ] += 100;
-        		d[ j + 1 ] += 100;
-       			d[ j + 2 ] += 100;
+		    	d[ j ] = d[ j ] * light;
+        		d[ j + 1 ] = d[ j +1] *light;
+       			d[ j + 2 ] = d[ j +2] *light;
 			}
 			ctx.putImageData(imageData, 0,0);
 		},
@@ -130,21 +131,79 @@ $( document ).ready(function() {
 			}
 			ctx.putImageData(imageData, 0,0);
 		},
-		antialiasing : function (argument) {
-			let d=imageData.data;
-			for (let j = 0; j < d.length; j += 4){
-		    	d[ j + 3 ] -= 100;
-			}
-			ctx.putImageData(imageData, 0,0);
+		contrast : function (imageData) {//input range [-100..100]
+			var contrast = document.getElementById("contrast").value ;
+		    var d = imageData.data;
+		    contrast = (contrast/100) + 1;  //convert to decimal & shift range: [0..2]
+		    var intercept = 128 * (1 - contrast);
+		    for(var i=0;i<d.length;i+=4){   //r,g,b,a
+		        d[i] = d[i]*contrast + intercept;
+		        d[i+1] = d[i+1]*contrast + intercept;
+		        d[i+2] = d[i+2]*contrast + intercept;
+		    }
+		    ctx.putImageData(imageData, 0,0);
 		}
+		
 	}
 
 	$("#filtros").change(addEfect);
+
+	$("#contrast").change(function (argument) {
+		if(document.getElementById("restore").checked){
+			restore();
+			$('#filtros').prop('selectedIndex',0);
+			$('#brighten').prop('value',1);
+		}
+		imageData = ctx.getImageData(0,0, canvas.width, canvas.height);
+		filter.contrast(imageData);
+	});
+
+	$("#brighten").change(function (argument) {
+		if(document.getElementById("restore").checked){
+			restore();
+			$('#filtros').prop('selectedIndex',0);
+			$('#contrast').prop('value',0);
+		}
+		imageData = ctx.getImageData(0,0, canvas.width, canvas.height);
+		filter.brighten(imageData);
+	});
+
+	$("#restore").click(function (){
+		if(document.getElementById("restore").checked){
+			restore();
+			$('#filtros').prop('selectedIndex',0);
+			$('#brighten').prop('value',1);
+			$('#contrast').prop('value',0);
+		}
+	});
+
+	document.getElementById('file-input').addEventListener('change', function(e) {
+			var reader = new FileReader();
+		    reader.onload = function(event){
+		        var img = new Image();
+		        img.onload = function(){
+		            canvas.width = img.width;
+		            canvas.height = img.height;
+		            ctx.drawImage(img,0,0);
+			        backCanvas.width = canvas.width;
+					backCanvas.height = canvas.height;
+					backCtx.drawImage(canvas, 0,0);
+		        }
+		        img.src = event.target.result;
+		    }
+		    reader.readAsDataURL(e.target.files[0])
+			
+	}, false);
 	
 	function addEfect() {
+
+		if(document.getElementById("restore").checked){
+			restore();
+			$('#brighten').prop('value',1);
+			$('#contrast').prop('value',0);
+		}
 		imageData = ctx.getImageData(0,0, canvas.width, canvas.height);
-		let oldImageData = ctx.getImageData(0,0, canvas.width, canvas.height);
-		selectFilter($("#filtros").val(), imageData, oldImageData);
+		selectFilter($("#filtros").val(), imageData);
 	}
 	
 
@@ -155,9 +214,6 @@ $( document ).ready(function() {
 		        break;
 		    case "sepia":
 		        filter.sepia(imageData);
-		        break;
-		    case "brighten":
-		        filter.brighten(imageData);
 		        break;
 		    case "binary":
 		        filter.greyscale(imageData);
@@ -171,13 +227,17 @@ $( document ).ready(function() {
 		    case "saturate":
 		    	filter.saturate(imageData);
 		    	break;
-		    case "antialiasing":
-		         filter.antialiasing(imageData);
-		         break;
 		    default:
 		}
 	}
+
+	function restore() {
+		ctx.drawImage(backCanvas, 0,0);
+	}
+
 	var ctx = document.getElementById("canvas").getContext("2d");
 	var canvas = document.getElementById("canvas");
+	var backCanvas = document.createElement('canvas');
+	var backCtx = backCanvas.getContext('2d');
 }
 );

@@ -44,24 +44,11 @@ $( document ).ready(function() {
    			this.download = filename +'.png';
 		}, false);
 
-		document.getElementById('file-input').addEventListener('change', function(e) {
-			var reader = new FileReader();
-		    reader.onload = function(event){
-		        var img = new Image();
-		        img.onload = function(){
-		            canvas.width = img.width;
-		            canvas.height = img.height;
-		            ctx.drawImage(img,0,0);
-		        }
-		        img.src = event.target.result;
-		    }
-		    reader.readAsDataURL(e.target.files[0])
-			
-		}, false);
-
 		 function init(container) {
 	        // bind mouse events
 	        canvas.onmousemove = function(e) {
+	        	ctx.lineCap="round";
+				ctx.lineWidth= 5;
 	            if (!canvas.isDrawing) {
 	               return;
 	            }
@@ -82,6 +69,8 @@ $( document ).ready(function() {
 	            point.y=e.layerY;
 	        };
 	        canvas.onmousedown = function(e) {
+	        	ctx.lineCap="round";
+				ctx.lineWidth= 5;
 	            canvas.isDrawing = true;
 	            ctx.strokeStyle= $("#color").val();
 	            if(erase){

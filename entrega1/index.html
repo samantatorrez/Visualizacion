@@ -28,7 +28,7 @@
 			        </a>
 			        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 			          <a class="dropdown-item" id="nuevo" href="#">Nuevo</a>
-			          <a class="dropdown-item" id="imagen" href="#" download="">Cargar Imagen</a>
+			          <a class="dropdown-item" id="imagen" href="#">Cargar Imagen</a>
 			          <input id="file-input" type="file" name="imagenACargar" style="display: none;" accept="image/*" />
 			          <a class="dropdown-item" id="download" href="#">Guardar</a>
 			        </div>
@@ -46,26 +46,42 @@
 				    <img id="lapiz" src="lapiz.png" class="selectedIMG" alt="">
 					<img id="goma" src="goma.png" class="" alt="">
 			    </div>
-			    <div class="col-5">
+			    <div class="col-2">
+			    	<label for="restore">Restaurar?</label>
+			    </div>
+			    <div class="col-2">
 					<label for="filtros">Filtros</label>
+			    </div>
+			    <div class="col-3">
+					<label for="contrast">Contrast</label>
+			    </div>
+			    <div class="col-2">
+					<label for="brighten">Brighten</label>
 			    </div>
 			  </div>
 			  <div class="row">
 			    <div class="col-2">
 			      <input id="color" type="color">
 			    </div>
-			    <div class="col-5">
+			    <div class="col-2">
+			      <input id="restore" type="checkbox">
+			    </div>
+			    <div class="col-2">
 				    <select class="form-control form-control-sm" id="filtros">
-				      <option value="none">Ninguno</option>
+				      <option value="none">Nada</option>
 				      <option value="negative">Negativo</option>
-				      <option value="brighten">Brillo</option>
 				      <option value="binary">Binarizacion</option>
 				      <option value="sepia">Sepia</option>
 				      <option value="blur">Blur</option>
 				      <option value="edge">Edge</option>
 				      <option value="saturate">Saturate</option>
-				      <option value="antialiasing">Antialiasing</option>
 				    </select>
+			    </div>
+			    <div class="col-3">
+					<input type="range" min="-100" max="100" id="contrast">
+			    </div>
+			    <div class="col-2" >
+					<input type="range" min="1" value="1" max="10" id="brighten">
 			    </div>
 			  </div>
 			 </div>

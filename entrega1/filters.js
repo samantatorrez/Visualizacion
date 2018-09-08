@@ -142,6 +142,11 @@ $( document ).ready(function() {
 		        d[i+2] = d[i+2]*contrast + intercept;
 		    }
 		    ctx.putImageData(imageData, 0,0);
+		},
+		antialiasing : function (imageData) {
+			this.matriz(imageData,[  1, 1,  1,
+ 								   1,  1, 1,
+    							 1, 1,  1 ]);
 		}
 		
 	}
@@ -226,6 +231,9 @@ $( document ).ready(function() {
 		    	break;
 		    case "saturate":
 		    	filter.saturate(imageData);
+		    	break;
+		    case "antialiasing":
+		    	filter.antialiasing(imageData);
 		    	break;
 		    default:
 		}

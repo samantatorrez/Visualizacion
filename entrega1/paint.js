@@ -4,7 +4,7 @@ $( document ).ready(function() {
 		var erase = false;
 		var ruber = '#FFFFFF';
 		ctx.lineCap="round";
-		ctx.lineWidth= 5;
+		ctx.lineWidth= document.getElementById('lineSize').value;
 
 		var point = {
 			x : null,
@@ -48,7 +48,7 @@ $( document ).ready(function() {
 	        // bind mouse events
 	        canvas.onmousemove = function(e) {
 	        	ctx.lineCap="round";
-				ctx.lineWidth= 5;
+				ctx.lineWidth= document.getElementById('lineSize').value;
 	            if (!canvas.isDrawing) {
 	               return;
 	            }
@@ -70,7 +70,7 @@ $( document ).ready(function() {
 	        };
 	        canvas.onmousedown = function(e) {
 	        	ctx.lineCap="round";
-				ctx.lineWidth= 5;
+				ctx.lineWidth= document.getElementById('lineSize').value;
 	            canvas.isDrawing = true;
 	            ctx.strokeStyle= $("#color").val();
 	            if(erase){

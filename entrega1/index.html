@@ -42,9 +42,19 @@
 		<nav id="inicioContent">
 			<div class="container">
 			  <div class="row">
-			    <div class="col-2">
+			    <div class="col-1">
 				    <img id="lapiz" src="lapiz.png" class="selectedIMG" alt="">
-					<img id="goma" src="goma.png" class="" alt="">
+			    </div>
+			    <div class="col-1">
+				    <select id="lineSize">
+				      <option value="1">1</option>
+				      <option value="5">5</option>
+				      <option value="10" selected>10</option>
+				      <option value="15">15</option>
+				      <option value="20">20</option>
+				      <option value="25">25</option>
+				      <option value="30">30</option>
+				    </select>
 			    </div>
 			    <div class="col-2">
 			    	<label for="restore">Restaurar?</label>
@@ -60,7 +70,10 @@
 			    </div>
 			  </div>
 			  <div class="row">
-			    <div class="col-2">
+			    <div class="col-1">
+			      <img id="goma" src="goma.png" class="" alt="">
+			    </div>
+			    <div class="col-1">
 			      <input id="color" type="color">
 			    </div>
 			    <div class="col-2">
@@ -68,13 +81,14 @@
 			    </div>
 			    <div class="col-2">
 				    <select class="form-control form-control-sm" id="filtros">
-				      <option value="none">Nada</option>
+				      <option value="none" selected>Nada</option>
 				      <option value="negative">Negativo</option>
 				      <option value="binary">Binarizacion</option>
 				      <option value="sepia">Sepia</option>
 				      <option value="blur">Blur</option>
 				      <option value="edge">Edge</option>
 				      <option value="saturate">Saturate</option>
+				      <option value="antialiasing">Antialiasing</option>
 				    </select>
 			    </div>
 			    <div class="col-3">

@@ -1,0 +1,87 @@
+body {
+	background: url("fondo.png") no-repeat center fixed;
+	-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#titulo {
+	height: 60px;
+}
+.ficha {
+	height: 50px;
+	text-align: center;
+}
+#score{
+	background-image: url("score.png") ;
+	-webkit-background-size: contain;
+	background-size: contain;
+	background-repeat: no-repeat;
+    background-position: center; 
+    text-align: center;
+    width: 193px;
+	height: 410px;
+	
+    color:white;
+    
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#socoreTable{
+
+}
+#panel{
+	background-image: url("panel.png")  ;
+	-webkit-background-size: contain;
+	background-size: contain;
+	background-repeat: no-repeat;
+    background-position: center; 
+    padding-top: 100px;
+    padding-left: 115px;
+    width: 280px;
+    height: 420px;
+}
+#fichaMar {
+	padding-top: 145px;
+}
+.table>thead>tr>th,
+.table>tbody>tr>td,
+.table>tbody>tr>th {
+  border-top: none;
+}
+.table {
+	width: 193px;
+	padding-top: 125px;
+}
+
+
+#confirm {
+            display: none;
+            background-image: url("star.png");
+            border: 1px solid #aaa;
+            position: fixed;
+            width: 250px;
+            left: 50%;
+            margin-left: -100px;
+            padding: 6px 8px 8px;
+            box-sizing: border-box;
+            text-align: center;
+         }
+         #confirm button {
+            background-image: url("star.png");
+            display: inline-block;
+            border-radius: 5px;
+            border: 1px solid #aaa;
+            padding: 5px;
+            text-align: center;
+            width: 80px;
+            cursor: pointer;
+         }
+         #confirm .message {
+            text-align: left;
+         }
+.float-left {
+float:left;
+width:300px; // or 33% for equal width independent of parent width
+}

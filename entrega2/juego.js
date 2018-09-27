@@ -179,6 +179,7 @@ $( document ).ready(function() {
 			
 		},
 		refresh : function () {
+			this.totalCeldas=this.h*this.w;
 			previoCtx.clearRect(0, 0, canvas.width, canvas.height);
 			previoCtx.drawImage(inicial, 0,0,canvas.width,canvas.height);
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -376,6 +377,8 @@ $( document ).ready(function() {
 				document.getElementById("puntajeAire").innerHTML =tablero.puntajeAire;
 				document.getElementById("puntajeMar").innerHTML =tablero.puntajeMar;
 				functionAlert("The winner is: "+ tablero.getWinner() );
+			} else if(tablero.totalCeldas==0) {
+				functionAlert("No winner :( " );
 			}
 		}
 		

@@ -58,7 +58,6 @@ body {
 
 #confirm {
             display: none;
-            background-image: url("star.png");
             border: 1px solid #aaa;
             position: fixed;
             width: 250px;
@@ -67,9 +66,9 @@ body {
             padding: 6px 8px 8px;
             box-sizing: border-box;
             text-align: center;
+            color: white;
          }
          #confirm button {
-            background-image: url("star.png");
             display: inline-block;
             border-radius: 5px;
             border: 1px solid #aaa;
@@ -83,5 +82,5 @@ body {
          }
 .float-left {
 float:left;
-width:300px; // or 33% for equal width independent of parent width
+width:300px; 
 }

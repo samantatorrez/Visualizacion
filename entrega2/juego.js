@@ -295,14 +295,14 @@ $( document ).ready(function() {
 					vertical++;
 				} else {break;}
 			}
-			for (let i=x-1, j=y+1 ;i>=0, j< tablero.h ; i--, j++){
+			for (let i=x-1, j=y+1 ;i>=0 && j< tablero.h ; i--, j++){
 				if (this.get(i,j) == this.get(x,y)){
 					diagonalIzq++;
 				} else {break;}
 			}
-			for (let i=x+1, j=y+1 ;i<tablero.w, j< tablero.h ; i++, j++){
+			for (let i=x+1, j=y+1 ;i<tablero.w && j< tablero.h ; i++, j++){
 				if (this.get(i,j) == this.get(x,y)){
-					diagonalIzq++;
+					diagonalDer++;
 				} else {break;}
 			}
 
@@ -310,6 +310,13 @@ $( document ).ready(function() {
 				this.winner = this.get(x,y);
 				this.setPuntaje();
 				dragEnabled=false;
+			}
+		},
+		getWinner(){
+			if(this.winner == 1){
+				return "Air";
+			} else {
+				return "Sea";
 			}
 		}
 	}
@@ -357,7 +364,7 @@ $( document ).ready(function() {
 			if (tablero.winner !=null) {
 				document.getElementById("puntajeAire").innerHTML =tablero.puntajeAire;
 				document.getElementById("puntajeMar").innerHTML =tablero.puntajeMar;
-				functionAlert();
+				functionAlert("The winner is: "+ tablero.getWinner() );
 			}
 		}
 		

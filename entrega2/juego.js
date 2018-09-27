@@ -174,9 +174,14 @@ $( document ).ready(function() {
 
 			inicialCtx.drawImage(canvas, 0,0,canvas.width,canvas.height);
 			previoCtx.drawImage(canvas, 0,0,canvas.width,canvas.height);
-			ctx.drawImage(this.air, 683, 80, CELDA_SIZE, CELDA_SIZE);
+			this.drawAir();
 
 			
+		},
+		drawAir :function () {
+			ctx.drawImage(this.air, 683, 80, CELDA_SIZE, CELDA_SIZE);
+			ctx.drawImage(this.air, 625, 100, CELDA_SIZE, CELDA_SIZE);
+			ctx.drawImage(this.air, 741, 100, CELDA_SIZE, CELDA_SIZE);
 		},
 		refresh : function () {
 			this.totalCeldas=this.h*this.w;
@@ -207,7 +212,7 @@ $( document ).ready(function() {
 			this.contenido=fila;
 			this.turno ="air";
 			this.winner=null;
-			ctx.drawImage(this.air, 683, 80, CELDA_SIZE, CELDA_SIZE);
+			this.drawAir();
 
 		},
 
@@ -254,9 +259,12 @@ $( document ).ready(function() {
 			if(this.turno == "air"){
 				this.turno = "sea";
 				ctx.drawImage(this.sea, 683, 280, CELDA_SIZE, CELDA_SIZE);
+				ctx.drawImage(this.sea, 625, 300, CELDA_SIZE, CELDA_SIZE);
+				ctx.drawImage(this.sea, 741, 300, CELDA_SIZE, CELDA_SIZE);
 			} else {
 				this.turno = "air";
-				ctx.drawImage(this.air, 683, 80, CELDA_SIZE, CELDA_SIZE);
+				this.drawAir();;
+
 			}
 		},
 		get: function (x,y) {
@@ -326,9 +334,9 @@ $( document ).ready(function() {
 		},
 		getWinner(){
 			if(this.winner == 1){
-				return "Air";
+				return "air";
 			} else {
-				return "Sea";
+				return "sea";
 			}
 		}
 	}
@@ -376,7 +384,16 @@ $( document ).ready(function() {
 			if (tablero.winner !=null) {
 				document.getElementById("puntajeAire").innerHTML =tablero.puntajeAire;
 				document.getElementById("puntajeMar").innerHTML =tablero.puntajeMar;
-				functionAlert("The winner is: "+ tablero.getWinner() );
+				let confirm = document.getElementById("confirm");
+				if(tablero.getWinner()=="air"){
+					confirm.classList.remove("seaWinner");
+					confirm.classList.add("airWinner");
+				} else {
+					confirm.classList.remove("airWinner");
+					confirm.classList.add("seaWinner");
+				}
+				
+				functionAlert();
 			} else if(tablero.totalCeldas==0) {
 				functionAlert("No winner :( " );
 			}

@@ -58,9 +58,9 @@ body {
 
 #confirm {
             display: none;
-            border: 1px solid #aaa;
             position: fixed;
-            width: 250px;
+            width: 200px;
+            height: 141px;
             left: 50%;
             margin-left: -100px;
             padding: 6px 8px 8px;
@@ -69,13 +69,11 @@ body {
             color: white;
          }
          #confirm button {
-            display: inline-block;
-            border-radius: 5px;
-            border: 1px solid #aaa;
-            padding: 5px;
+            margin-top: 65px;
             text-align: center;
-            width: 80px;
+            width: 100px;
             cursor: pointer;
+            height: 50px;
          }
          #confirm .message {
             text-align: left;
@@ -83,4 +81,27 @@ body {
 .float-left {
 float:left;
 width:300px; 
+}
+.airWinner{
+  background-image: url("airWinner.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.seaWinner{
+  background-image: url("seaWinner.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.accept{
+  background-image: url("accept.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 }

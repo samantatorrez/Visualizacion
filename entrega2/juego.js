@@ -15,6 +15,10 @@ $( document ).ready(function() {
 	var inicialCtx= inicial.getContext('2d');
 	var previo=document.createElement('canvas');
 	var previoCtx=previo.getContext('2d');
+
+	var aux=document.createElement('canvas');
+	var auxCtx=aux.getContext('2d');
+
 	previo.width = canvas.width;
 	previo.height = canvas.height;
 	inicial.width = canvas.width;
@@ -86,8 +90,8 @@ $( document ).ready(function() {
 		w: null,
 		contenido: null,
 
-		puntajeAire: null,
-		puntajeMar: null,
+		puntajeAire: 0,
+		puntajeMar: 0,
 		turno: "air",
 
 		celda: null,
@@ -96,6 +100,8 @@ $( document ).ready(function() {
 
 		airZone:null,
 		dropZone: null,
+
+		winner:null,
 
 		init : function (x,y) {
 			this.totalCeldas=x*y;
@@ -165,16 +171,42 @@ $( document ).ready(function() {
 			 	columna=[];
 				}
 			this.contenido=fila;
-			this.greySea();
 
-			inicialCtx.drawImage(canvas, 0,0);
-			previoCtx.drawImage(canvas, 0,0);
-		},
-		greySea : function () {
-			ctx.drawImage(this.air, 625, 100, CELDA_SIZE, CELDA_SIZE);
+			inicialCtx.drawImage(canvas, 0,0,canvas.width,canvas.height);
+			previoCtx.drawImage(canvas, 0,0,canvas.width,canvas.height);
 			ctx.drawImage(this.air, 683, 80, CELDA_SIZE, CELDA_SIZE);
-			ctx.drawImage(this.air, 740, 100, CELDA_SIZE, CELDA_SIZE);
-			this.greyscale(this.sea, 640,302);
+
+			
+		},
+		refresh : function () {
+			previoCtx.clearRect(0, 0, canvas.width, canvas.height);
+			previoCtx.drawImage(inicial, 0,0,canvas.width,canvas.height);
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(inicial, 0,0,canvas.width,canvas.height);
+            let fila=[this.h];
+			let columna=[this.w];
+			this.columnaInfo =[this.w];
+			let xc = 0;
+			let yc = 0;
+			let firstColumn=false;
+			for (let i = 0; i < this.h; i++) {
+				for (let j= 0; j < this.w; j++) {
+					columna[j] = new Celda(xc,yc,CELDA_SIZE,CELDA_SIZE,0);
+					xc=xc+CELDA_SIZE+CELDA_DISTANCIA;
+					if (!firstColumn){
+						this.columnaInfo[j] = new ColumnaInfo(xc-CELDA_DISTANCIA/2,this.h-1);
+					}
+				}
+				firstColumn=true;
+				xc=0;
+				yc=yc+CELDA_SIZE+CELDA_DISTANCIA;
+			 	fila[i] = columna;
+			 	columna=[];
+				}
+			this.contenido=fila;
+			this.turno ="air";
+			this.winner=null;
+			ctx.drawImage(this.air, 683, 80, CELDA_SIZE, CELDA_SIZE);
 
 		},
 
@@ -201,14 +233,8 @@ $( document ).ready(function() {
 					this.columnaInfo[column].next();
 				}
 				this.setTurno();
+				this.setWinner(column,row);
 			}
-		},
-
-		get : function (x,y) {
-			return contenido[y][x];
-		},
-		set : function (x,y,k) {
-			contenido[y,x]=k;
 		},
 		isFull : function () {
 			return contenido == 0 ? true : false;
@@ -226,34 +252,82 @@ $( document ).ready(function() {
 		setTurno :function () {
 			if(this.turno == "air"){
 				this.turno = "sea";
+				ctx.drawImage(this.sea, 683, 280, CELDA_SIZE, CELDA_SIZE);
 			} else {
 				this.turno = "air";
+				ctx.drawImage(this.air, 683, 80, CELDA_SIZE, CELDA_SIZE);
 			}
 		},
-		greyscale : function (imageData, x,y) {
-			let data=imageData.data;
-			let gris;
-			for (let j = 0; j < data.length; j += 4){
-				gris = parseInt((data[j] + data[j + 1] + data[j + 2]) / 3);
-				data[j]= data[j+1]= data[j+2]=gris;
-			}
-			ctx.putImageData(imageData, x,y);
+		get: function (x,y) {
+			return this.contenido[y][x].value;
 		},
+		setPuntaje: function (argument) {
+			if(this.winner == 1){
+				this.puntajeAire++;
+			} else {
+				this.puntajeMar++;
+			}
+		},
+		setWinner : function (x,y) {
+			let horizontal=1;
+			let vertical=1;
+			let diagonalDer=1;
+			let diagonalIzq=1;
+
+			for (let i=x+1;i< tablero.w; i++){
+				if (this.get(i,y) == this.get(x,y)){
+					horizontal++;
+				} else {break;}
+			}
+			for (let i=x-1;i>=0; i--){
+				if (this.get(i,y) == this.get(x,y)){
+					horizontal++;
+				} else {break;}
+			}
+
+			for (let i=y+1;i< tablero.h; i++){
+				if (this.get(x,i) == this.get(x,y)){
+					vertical++;
+				} else {break;}
+			}
+			for (let i=y-1;i>=0; i--){
+				if (this.get(x,i) == this.get(x,y)){
+					vertical++;
+				} else {break;}
+			}
+			for (let i=x-1, j=y+1 ;i>=0, j< tablero.h ; i--, j++){
+				if (this.get(i,j) == this.get(x,y)){
+					diagonalIzq++;
+				} else {break;}
+			}
+			for (let i=x+1, j=y+1 ;i<tablero.w, j< tablero.h ; i++, j++){
+				if (this.get(i,j) == this.get(x,y)){
+					diagonalIzq++;
+				} else {break;}
+			}
+
+			if (vertical == 4 || horizontal==4 || diagonalDer==4 || diagonalIzq == 4) {
+				this.winner = this.get(x,y);
+				this.setPuntaje();
+				dragEnabled=false;
+			}
+		}
 	}
 
 
-	var mousePressed;
+	var mousePressed=false;
+	var dragEnabled=true;
 	function drag(ev) {
 		
 		let x, y;
 		x = ev.clientX - this.offsetLeft - CELDA_SIZE/2;
 		y = ev.clientY - this.offsetTop - CELDA_SIZE/2;
-		if(tablero.turno =="air" && tablero.airZone.isInZone(ev.clientX - this.offsetLeft,ev.clientY - this.offsetTop)){
+		if(dragEnabled&&tablero.turno =="air" && tablero.airZone.isInZone(ev.clientX - this.offsetLeft,ev.clientY - this.offsetTop)){
 			canvas.addEventListener("mousemove",move);
 			ctx.drawImage(tablero.air,x, y,CELDA_SIZE,CELDA_SIZE);
 			mousePressed = true;
 		}
-		if(tablero.turno =="sea" && tablero.seaZone.isInZone(ev.clientX - this.offsetLeft,ev.clientY - this.offsetTop)){
+		if(dragEnabled&&tablero.turno =="sea" && tablero.seaZone.isInZone(ev.clientX - this.offsetLeft,ev.clientY - this.offsetTop)){
 			canvas.addEventListener("mousemove",move);
 			ctx.drawImage(tablero.sea,x, y,CELDA_SIZE,CELDA_SIZE);
 			mousePressed = true;
@@ -262,7 +336,7 @@ $( document ).ready(function() {
 	}
 	function move(ev) {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		ctx.drawImage(previo, 0,0);
+		ctx.drawImage(previo, 0,0,canvas.width,canvas.height);
 		let x, y;
 		if (mousePressed){
 			x = ev.clientX - this.offsetLeft - CELDA_SIZE/2;
@@ -274,12 +348,19 @@ $( document ).ready(function() {
 	function drop(ev) {
 		event.preventDefault();
 		if(mousePressed && tablero.dropZone.isInZone(ev.clientX - this.offsetLeft,ev.clientY - this.offsetTop)){
+
+			mousePressed=false;
 			canvas.removeEventListener("mousemove",move);
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			ctx.drawImage(previo, 0,0);
+			ctx.drawImage(previo, 0,0,canvas.width,canvas.height);
 			tablero.insert(ev.clientX - this.offsetLeft);
+			if (tablero.winner !=null) {
+				document.getElementById("puntajeAire").innerHTML =tablero.puntajeAire;
+				document.getElementById("puntajeMar").innerHTML =tablero.puntajeMar;
+				functionAlert();
+			}
 		}
-		mousePressed=false;
+		
 	}
 
 	function print(ev) {
@@ -288,13 +369,22 @@ $( document ).ready(function() {
 		y = ev.clientY - this.offsetTop;
 		console.log("x:"+x+" y:"+y);
 	}
+	function functionAlert(msg, myYes) {
+            var confirmBox = $("#confirm");
+            confirmBox.find(".message").text(msg);
+            confirmBox.find(".yes").unbind().click(function() {
+               confirmBox.hide();
+               dragEnabled=true;
+               tablero.refresh();
+            });
+            confirmBox.find(".yes").click(myYes);
+            confirmBox.show();
+         }
 
 	canvas.addEventListener("mousedown",drag);
 	canvas.addEventListener("mouseup",drop);
-	canvas.addEventListener("click",print);
+	//canvas.addEventListener("click",print);
 	
-
-
 	tablero.init(TABLERO_CANT_COLUMNAS,TABLERO_CANT_FILAS);
 });
 
@@ -303,12 +393,3 @@ $( document ).ready(function() {
 
 
 
-function functionAlert(msg, myYes) {
-            var confirmBox = $("#confirm");
-            confirmBox.find(".message").text(msg);
-            confirmBox.find(".yes").unbind().click(function() {
-               confirmBox.hide();
-            });
-            confirmBox.find(".yes").click(myYes);
-            confirmBox.show();
-         }

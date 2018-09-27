@@ -300,7 +300,18 @@ $( document ).ready(function() {
 					diagonalIzq++;
 				} else {break;}
 			}
+			for (let i=x+1, j=y-1 ;i<tablero.w && j>=0 ; i++, j--){
+				if (this.get(i,j) == this.get(x,y)){
+					diagonalIzq++;
+				} else {break;}
+			}
+
 			for (let i=x+1, j=y+1 ;i<tablero.w && j< tablero.h ; i++, j++){
+				if (this.get(i,j) == this.get(x,y)){
+					diagonalDer++;
+				} else {break;}
+			}
+			for (let i=x-1, j=y-1 ;i>=0 && j>=0 ; i--, j--){
 				if (this.get(i,j) == this.get(x,y)){
 					diagonalDer++;
 				} else {break;}

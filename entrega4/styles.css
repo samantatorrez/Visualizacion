@@ -59,8 +59,10 @@ button {
     right: 50%;
 }
 #start {
+    position: absolute;
     margin-left: 35%;
     margin-top: 50%;
+    z-index: 9;
 }
 
 #car {
@@ -96,7 +98,7 @@ button {
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 @keyframes enemyAction {
-	from {top:-100px;}
+	from {top:-200px;}
     to {top: 500px;}
 }
 @keyframes carretera {

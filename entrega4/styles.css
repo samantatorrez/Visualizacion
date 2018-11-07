@@ -1,0 +1,105 @@
+html{
+    height: 100%;
+}
+.carrera {
+    background-image: url("fondo2.jpg"); 
+    animation: carretera 2s infinite linear;
+}
+.enemy {
+    position: absolute;
+    animation: enemyAction 2s infinite linear;
+}
+.star {
+    position: absolute;
+    animation: starAction 2s infinite linear;
+}
+.pause {
+    animation-play-state: paused;
+}
+.rotateImage {
+    -webkit-animation:spin 1s linear;
+    -webkit-animation-iteration-count: 2;
+    -moz-animation:spin 1s linear;
+    animation:spin 1s linear;
+    animation-iteration-count: 2;
+}
+
+button {
+    background-color: violet; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#container{
+    position: relative;
+    background-size: contain;
+    left: 360px;
+    margin-top: 20px;
+    background-color: #292929;
+    overflow: hidden;
+    left: 50%;
+}
+#container, #puntaje {
+    width: 350px;
+    height: 532px;
+}
+#puntaje{
+    background-image: url("raceFlag2.jpg");
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    position: absolute;
+    text-align: center;
+    font-size: 35px;
+    background-color: white;
+    color: white;
+    right: 50%;
+}
+#start {
+    margin-left: 35%;
+    margin-top: 50%;
+}
+
+#car {
+  position: absolute;
+  z-index:6;
+  left: 140px;
+  top: 365px;
+}
+
+#enemy1, #star1 {
+    left: 10%;
+}
+#enemy2, #star2 {
+    left: 40%;
+}
+#enemy3, #star3 {
+    left: 70%;
+}
+#volumenImg {
+    height: 30px;
+}
+#volumen {
+    height: 20px;
+    width: 100px;
+}
+
+@keyframes starAction {
+	0% { width:50px; height:50px; border:10px solid white; top:-100px;transform:rotate(-10deg);}
+    100% { width:50px; height:50px; border:10px solid transparent;top: 500px; transform:rotate(10deg);}
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@keyframes enemyAction {
+	from {top:-100px;}
+    to {top: 500px;}
+}
+@keyframes carretera {
+	from {background-position: top center;}
+    to {background-position: bottom center;}
+}

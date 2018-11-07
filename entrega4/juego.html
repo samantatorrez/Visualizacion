@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.standalone.min.css">
+  <link rel="stylesheet" href="web.css" type="text/css">
+  <link rel="stylesheet" href="iconos.css" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <title>Juego</title>
+  <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body class="">
+  <div class="navbar navbar-expand-lg bg-primary navbar-dark fixed-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <img class="img-fluid d-block" src="assets/img/playstore.png" onclick="window.location.href='index.html'">
+            <div class="collapse navbar-collapse text-center justify-content-end" id="navbarNowUIKitFree">
+              <ul class="navbar-nav ">
+                <li class="nav-item mx-1">
+                  <input id="busqueda" type="text" class="form-control" placeholder="Busqueda">
+                </li>
+                <li class="nav-item mx-1">
+                  <button class="btn btn-primary btn-icon rounded border-light border" type="button">
+                    <i class="now-ui-icons ui-1_zoom-bold lg"></i>
+                  </button>
+                </li>
+              </ul>
+              <ul class="navbar-nav">
+                <li class="nav-item mx-1">
+                  <button class="btn rounded border-light border btn-outline-light" type="button" data-target="#collapsibleNavbar" data-toggle="collapse" aria-expanded="false" aria-controls="collapsibleNavbar" style="">Filtrar <i class="now-ui-icons ui-1_simple-add lg"></i></button>
+                </li>
+              </ul>
+              <ul class="navbar-nav">
+                <li class="nav-item mx-1">
+                  <button class="btn btn-primary btn-icon rounded border border-light" type="button">
+                    <i class="now-ui-icons shopping_cart-simple lg"></i>
+                  </button>
+                </li>
+              </ul>
+              <ul class="navbar-nav flex-row justify-content-center mt-2 mt-md-0">
+                <li class="nav-item mx-3 mx-md-1 border-primary border">
+                  <button type="button" class="btn rounded border-light border btn-outline-light" onclick="window.location.href='login.html'"> Sign in <i class="fa fa-fw fa-user-circle fa-2x"></i></button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="collapse " id="collapsibleNavbar" style="">
+          <div class="py-2 text-left">
+            <form>
+              <div class="row">
+                <div class="col">
+                  <label>Rango de precios</label>
+                  <div class="form-group"> <input type="number" class="form-control" name="preciosDesde" placeholder="Desde" style=""> </div>
+                  <div class="form-group"> <input type="number" class="form-control" name="preciosHasta" placeholder="Hasta"> </div>
+                </div>
+                <div class="col">
+                  <label>Rango de etario</label>
+                  <div class="form-group"> <input type="text" class="form-control datepicker-game" placeholder="Desde" name="etarioDesde"> </div>
+                  <div class="form-group"> <input type="text" class="form-control datepicker-game" name="etarioHasta" placeholder="Hasta"> </div>
+                </div>
+                <div class="col">
+                  <label>Rating</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="5" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                      <i class="now-ui-icons emoticons_satisfied lg"></i>
+                      <i class="now-ui-icons emoticons_satisfied lg"></i>
+                      <i class="now-ui-icons emoticons_satisfied lg"></i>
+                      <i class="now-ui-icons emoticons_satisfied lg"></i>
+                      <i class="now-ui-icons emoticons_satisfied lg"></i>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="4" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                      <i class="now-ui-icons emoticons_satisfied lg"></i>
+                      <i class="now-ui-icons emoticons_satisfied lg"></i>
+                      <i class="now-ui-icons emoticons_satisfied lg"></i>
+                      <i class="now-ui-icons emoticons_satisfied lg"></i>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="3" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">
+                      <i class="now-ui-icons emoticons_satisfied lg"></i>
+                      <i class="now-ui-icons emoticons_satisfied lg"></i>
+                      <i class="now-ui-icons emoticons_satisfied lg"></i>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="2" id="defaultCheck4">
+                    <label class="form-check-label" for="defaultCheck4">
+                      <i class="now-ui-icons emoticons_satisfied lg"></i>
+                      <i class="now-ui-icons emoticons_satisfied lg"></i>
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="1" id="defaultCheck5">
+                    <label class="form-check-label" for="defaultCheck5"><i class="now-ui-icons emoticons_satisfied lg"></i></label>
+                  </div>
+                </div>
+                <div class="col">
+                  <label for="generos">Genero</label>
+                  <select class="form-control" id="generos">
+                    <option value="Todos">Todos</option>
+                    <option value="Acción">Acción</option>
+                    <option value="Deportes">Deportes</option>
+                    <option value="Carreras">Carreras</option>
+                    <option value="Ingenio">Ingenio</option>
+                  </select>
+                  <div class="col-md-12"><button class="btn mt-4 mb-3 btn-light rounded btn-lg text-primary" type="button" style="">Aplicar</button></div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+  <div class="mt-5 pt-5">
+    <div class="container">
+      <div id="puntaje">
+        <h3>Road Game</h3>
+        <div>
+            <label>Puntaje:</label>
+            <span id="puntuacion">0</span>
+        </div>
+        <img id="volumenImg" src="volume.png" >
+        <input id="volumen" type="range"  min="0" max="1" step="0.01"/>
+    </div>
+    <div id="container" >
+        <button id="start">Start</button>
+        <div id="car" style="display:none;"><img src="car.png" alt="auto" ></div>      
+        <div id ="enemy1" style="display:none;"><img src="enemy.png" alt="auto" ></div>
+        <div id ="enemy2" style="display:none;"><img src="enemy.png" alt="auto" ></div>
+        <div id ="enemy3" style="display:none;"><img src="enemy.png" alt="auto" ></div>
+        <div id ="star1" style="display:none;"><img src="star_gold.png" alt="auto" ></div>
+        <div id ="star2" style="display:none;"><img src="star_gold.png" alt="auto" ></div>
+        <div id ="star3" style="display:none;"><img src="star_gold.png" alt="auto" ></div>
+    </div>
+    </div>
+  </div>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p class="lead">Descripción</p>
+          <p class="">Juego de esquivar coches, el jugador que resiste mas tiempo tiene mejor puntaje.</p>
+        </div>
+        <div class="col-md-5">
+          <p class="lead">¿Cómo jugar ?</p>
+          <div class="row">
+            <div class="col-md-5">
+              <img src="arrows.png" >
+            </div>
+            <div class="col-md-7">
+              <p class="">Juego de esquivar coches. Usar flechas para mover el coche. Se obtienen mas puntos si se recogen las estrellas. Cuidado con los otros coches y con los bordes, en el caso de golpear con uno se pierde automaticamente el juego.</p>
+            </div>
+          </div>    
+        </div>
+        <div class="col-md-4">
+            <div class="container">
+                <div class="row">
+                  <div class="col-md-12" >
+                    <p class="lead">Ranking</p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <ol id="ranking" class="list-group scrollRanking">
+                      <li class="list-group-item d-flex justify-content-between align-items-center">Dara Torrez <span class="badge badge-primary badge-pill">Puntaje 800</span></li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">Greiscol <span class="badge badge-primary badge-pill">Puntaje 700</span> </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">Harry Potter <span class="badge badge-primary badge-pill">Puntaje 100</span> </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">PuppyCat <span class="badge badge-primary badge-pill">Puntaje 50</span> </li>
+                    </ol>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-3" >
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center d-md-flex align-items-center"> <i class="d-block fa fa-stop-circle fa-2x mr-md-5 text-primary"></i>
+          <ul class="nav mx-md-auto d-flex justify-content-center">
+            <li class="nav-item"> <a class="nav-link active" href="#" onclick="window.location.href='index.html'">Home</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#" onclick="window.location.href='index.html'">Destacados</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="#" onclick="window.location.href='index.html'">Estrenos</a> </li>
+          </ul>
+          <div class="row">
+            <div class="col-md-12 d-flex align-items-center justify-content-md-between justify-content-center my-2"> <a href="#">
+                <i class="d-block fa fa-facebook-official text-muted fa-lg mx-2"></i>
+              </a> <a href="#">
+                <i class="d-block fa fa-instagram text-muted fa-lg mx-2"></i>
+              </a> <a href="#">
+                <i class="d-block fa fa-twitter text-muted fa-lg ml-2"></i>
+              </a> </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mt-2 mb-0" contenteditable="true">© 2018 PlayStore. All rights reserved</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
+  <script src="race.js"></script>
+</body>
+
+</html>

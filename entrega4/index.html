@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Carrera de autos</title>
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+	<div id="puntaje">
+        <h2>Road Game</h2>
+        <div>
+            <label>Puntaje:</label>
+            <span id="puntuacion">0</span>
+        </div>
+        <img id="volumenImg" src="volume.png" >
+        <input id="volumen" type="range"  min="0" max="1" step="0.01"/>
+        <div>
+            <h3>Hi-scores</H3>
+            <ul>
+                <li>1. <span id="hi-score1">Empty</span></li>
+                <li>2. <span id="hi-score1">Empty</span></li>
+                <li>3. <span id="hi-score1">Empty</span></li>
+            </ul>
+        </div>
+    </div>
+    <div id="container" >
+        <button id="start">Start</button>
+        <div id="car" hidden><img src="car.png" alt="auto" ></div>      
+        <div id ="enemy1" hidden><img src="enemy.png" alt="auto" ></div>
+        <div id ="enemy2" hidden><img src="enemy.png" alt="auto" ></div>
+        <div id ="enemy3" hidden><img src="enemy.png" alt="auto" ></div>
+        <div id ="star1" hidden><img src="star_gold.png" alt="auto" ></div>
+        <div id ="star2" hidden><img src="star_gold.png" alt="auto" ></div>
+        <div id ="star3" hidden><img src="star_gold.png" alt="auto" ></div>
+    </div>
+    <script src="race.js"></script>
+</body>
+</html>

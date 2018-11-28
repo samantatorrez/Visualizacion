@@ -7,7 +7,7 @@ $(document).ready(function(){
         success: function(data){
             var event_data = '';
             $.each(data, function(index, value){
-                event_data += '<li class="list-group-item d-flex align-items-center justify-content-between">';
+                event_data += '<li class="list-group-item align-items-center justify-content-between">';
                 event_data += '<div class="commenterImage"><img id="imgUser" src="assets/img/'+value.img+'" /></div>';
                 event_data += '<div class="commentText"><p>'+value.name+'</p>';
                 event_data += '<p>'+value.body+'</p>';

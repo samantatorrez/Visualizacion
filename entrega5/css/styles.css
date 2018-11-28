@@ -95,7 +95,7 @@ button {
     height: 20px;
     width: 100px;
 }
-
+/*Animación sprite star*/
 .star {
     position: absolute;
     width: 65px; height: 61px;
@@ -131,7 +131,7 @@ button {
 	from {background-position: top center;}
     to {background-position: bottom center;}
 }
-
+/*Animación car explosion*/
 .carExplosion {
     background: url("../assets/img/race/exp_sprites.png") 0px 0px;
    animation: explosion  2s steps(8) 1;
@@ -163,8 +163,8 @@ button {
 .username{
     width: 100%;
 }
-
-/***/
+/*Entrega 5 ------------------------------------------------------------------------------------*/
+/*Animación botones*/
 .collapse.show {
     display: block;
 }
@@ -172,6 +172,7 @@ button {
     display: none;
 }
 .btn-primary, .btn-outline-light{
+    transition: transform 0.5s;
     box-shadow: -1px 5px  #999;
 }
 .btn-outline-light:active {
@@ -192,9 +193,7 @@ button {
     box-shadow: -1px 5px  #999;
 }
 .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus {
-
     box-shadow: 0px 0px  #999;
-
 }
 .btn-outline-light.focus, .btn-outline-light:focus, .btn-primary.focus, .btn-primary:focus{
     box-shadow: 0 0 0 .2rem rgba(248,249,250,.5);
@@ -207,7 +206,7 @@ button {
     border-color: #ffffff;
     box-shadow: 0 0 20px #d8cec9;
 }
-
+/*Animación comentarios*/
 #comentarios li{
     transition: transform 1s;
 }
@@ -231,6 +230,7 @@ button {
     color: black !important;
 }
 
+/*Animación ofertas*/
 .flip-box {
     background-color: transparent;
     top:10%;
@@ -246,7 +246,7 @@ button {
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s;
+    transition: transform 1s;
     transform-style: preserve-3d;
   }
   
@@ -272,4 +272,13 @@ button {
     background: url("../assets/img/oferta2.jpg") 0px 0px;
     color: white;
     transform: rotateY(180deg);
+  }
+
+  #rankingList li:hover{
+    z-index: 3;
+    transform-style: preserve-3d;
+    transform: perspective(200px) rotateX(7deg) scale3d(0.9,1.2,1) translateY(12px);
+    
+    /*transform: scale3d(1.5,1.2,1);*/
+    
   }

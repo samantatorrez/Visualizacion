@@ -1,0 +1,290 @@
+/*Animación del juego*/
+.carrera {
+    background-image: url("../assets/img/race/fondo2.jpg"); 
+    animation: carretera 2s infinite linear;
+}
+.enemy {
+    position: absolute;
+    animation: enemyAction 2s infinite linear;
+}
+
+.pause {
+    animation-play-state: paused ;
+}
+.rotateImage {
+    -webkit-animation:spin 1s linear;
+    -webkit-animation-iteration-count: 2;
+    -moz-animation:spin 1s linear;
+    animation:spin 1s linear;
+    animation-iteration-count: 2;
+}
+
+button {
+    background-color: violet; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#container{
+    position: relative;
+    background-size: contain;
+    left: 360px;
+    background-color: #292929;
+    overflow: hidden;
+    left: 50%;
+}
+#container, #puntaje {
+    width: 350px;
+    height: 532px;
+}
+#puntaje{
+    background-image: url("../assets/img/race/raceFlag2.jpg");
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    position: absolute;
+    text-align: center;
+    font-size: 35px;
+    background-color: white;
+    color: white;
+    right: 50%;
+    padding-top:10%;
+}
+#start {
+    position: absolute;
+    margin-left: 35%;
+    margin-top: 50%;
+    z-index: 9;
+}
+
+#car {
+  position: absolute;
+  z-index:6;
+  width: 75px; height: 157px;
+  left: 135px; top: 368px;
+}
+
+#enemy1, #enemy2, #enemy3 {
+    width: 75px; height: 157px;
+}
+
+.player {
+
+    background: url("../assets/img/race/car.png") ;
+}
+.enemies {
+    background: url("../assets/img/race/enemy.png");
+}
+
+#enemy1, #star1 {
+    left: 10%;
+}
+#enemy2, #star2 {
+    left: 40%;
+}
+#enemy3, #star3 {
+    left: 70%;
+}
+#volumenImg {
+    height: 30px;
+}
+#volumen {
+    height: 20px;
+    width: 100px;
+}
+/*Animación sprite star*/
+.star {
+    position: absolute;
+    width: 65px; height: 61px;
+    background: url("../assets/img/race/css_sprites.png") 0px 0px;
+    animation: infinite linear, steps(8);
+    animation-name: fallAction, starRotateAction;
+    animation-duration: 2s, 1s;
+    
+}
+
+@keyframes starRotateAction {
+	100% {
+        background-position: -520px 0px;
+    }
+}
+@keyframes fallAction {
+    0%{
+        top:0px;
+    }
+	100% {
+        top: 500px;
+    }
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@keyframes enemyAction {
+	from {top:-200px;}
+    to {top: 500px;}
+}
+@keyframes carretera {
+	from {background-position: top center;}
+    to {background-position: bottom center;}
+}
+/*Animación car explosion*/
+.carExplosion {
+    background: url("../assets/img/race/exp_sprites.png") 0px 0px;
+   animation: explosion  2s steps(8) 1;
+}
+@keyframes explosion {
+    100% {
+        background-position: -600px 0px;
+    }
+}
+
+.commenterImage {
+    width:200px;
+    margin-right:5px;
+    height:100%;
+    float:left;
+}
+.commenterImage img {
+    width:80px;
+    border-radius:50%;
+}
+.commentText p {
+    margin:0;
+}
+.sub-text {
+    color:#aaa;
+    font-family:verdana;
+    font-size:11px;
+}
+.username{
+    width: 100%;
+}
+
+
+/*Entrega 5 ------------------------------------------------------------------------------------*/
+/*Animación botones*/
+.collapse.show {
+    display: block;
+}
+.collapse {
+    display: none;
+}
+.btn-primary, .btn-outline-light{
+    transition: transform 0.5s;
+    box-shadow: -1px 5px  #999;
+}
+.btn-outline-light:active {
+    box-shadow: -1px 5px  #666;
+    transform: translateY(4px);
+}
+.btn-primary:hover {
+    background-color: #ffffff;
+    color: black;
+}
+.btn-primary:active {
+    background-color:white !important;
+    color: black !important;
+    box-shadow: 0px 0px #666;
+    transform: translateY(4px);
+}
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: -1px 5px  #999;
+}
+.btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: 0px 0px  #999;
+}
+.btn-outline-light.focus, .btn-outline-light:focus, .btn-primary.focus, .btn-primary:focus{
+    box-shadow: 0 0 0 .2rem rgba(248,249,250,.5);
+}
+
+#imgUser:hover {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    outline: none;
+    border-color: #ffffff;
+    box-shadow: 0 0 20px #d8cec9;
+}
+/*Animación comentarios*/
+#comentarios li{
+    transition: transform 1s;
+}
+
+#comentarios li:hover{
+    opacity: 1;
+    transform: perspective(200px) scaleY(1.05) translate3d(0px, -5px, 0px);
+    color:white;
+    background-color: #ff9f5f;
+    box-shadow: 0 3px 20px 12px rgba(0, 0, 0, 0.4);
+}
+
+#gameName {
+    margin-top: 100px;
+}
+#collapsibleNavbar {
+    width: 100%;
+}
+
+.btn-primary:hover {
+    color: black !important;
+}
+
+/*Animación ofertas*/
+.flip-box {
+    background-color: transparent;
+    top:10%;
+    background-size: 1107px 200px;
+    width: 1107px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+  }
+  
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .flip-box-front {
+    background-color: #bbb;
+    background: url("../assets/img/oferta.jpg") 0px 0px;
+    color: black;
+  }
+  
+  .flip-box-back {
+    background-color: dodgerblue;
+    background: url("../assets/img/oferta2.jpg") 0px 0px;
+    color: white;
+    transform: rotateY(180deg);
+  }
+  #rankingList li{
+    
+    transition: transform 0.5s;
+    -webkit-transition : transform 0.5s;
+    -moz-transition : transform 0.5s;
+    -o-transition : transform 0.5s;
+  }
+
+  #rankingList li:hover{
+    z-index: 3;
+    transform-style: preserve-3d;
+    transform: perspective(200px) rotateX(7deg) scale3d(0.9,1.2,1) translateY(12px);
+  }

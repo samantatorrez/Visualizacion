@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <title>Home</title>
+  <link rel="stylesheet" href="css/iconos.css" type="text/css">
+  <link rel="stylesheet" href="css/main.css" type="text/css">
+  <link rel="stylesheet" href="css/styles.css" type="text/css">
+</head>
+
+<body>
+  <div class="navbar navbar-expand-lg bg-primary navbar-dark fixed-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div>
+                <img class="img-fluid d-block" src="assets/img/playstore.png" onclick="window.location.href='index.html'">
+            </div>
+            <div class="collapse navbar-collapse text-center justify-content-end" id="navbarNowUIKitFree">
+              <ul class="navbar-nav ">
+                <li class="nav-item mx-1">
+                  <input id="busqueda" type="text" class="form-control" placeholder="Busqueda">
+                </li>
+                <li class="nav-item mx-1">
+                  <button class="btn btn-primary btn-icon rounded border-light border" type="button">
+                    <i class="now-ui-icons ui-1_zoom-bold lg"></i>
+                  </button>
+                </li>
+              </ul>
+              <ul class="navbar-nav">
+                <li class="nav-item mx-1">
+                  <button class="btn rounded border-light border btn-outline-light" type="button" id="filtrar" >Filtrar <i class="now-ui-icons ui-1_simple-add"></i></button>
+                </li>
+                <li class="nav-item mx-1">
+                    <button class="btn btn-primary btn-icon rounded border border-light" type="button">
+                      <i class="now-ui-icons shopping_cart-simple lg"></i>
+                    </button>
+                  </li>
+                  <li class="nav-item mx-3 mx-md-1">
+                      <button type="button" class="btn rounded border-light border btn-outline-light" onclick="window.location.href='login.html'"> Sign in <i class="fa fa-fw fa-user-circle"></i></button>
+                  </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="collapse" id="collapsibleNavbar" >
+          <div class="py-2 text-left">
+            <form>
+              <div class="d-flex justify-content-between">
+                  <div>
+                      <label>Rating</label>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="5" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                          <i class="now-ui-icons emoticons_satisfied lg"></i>
+                          <i class="now-ui-icons emoticons_satisfied lg"></i>
+                          <i class="now-ui-icons emoticons_satisfied lg"></i>
+                          <i class="now-ui-icons emoticons_satisfied lg"></i>
+                          <i class="now-ui-icons emoticons_satisfied lg"></i>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="4" id="defaultCheck2">
+                        <label class="form-check-label" for="defaultCheck2">
+                          <i class="now-ui-icons emoticons_satisfied lg"></i>
+                          <i class="now-ui-icons emoticons_satisfied lg"></i>
+                          <i class="now-ui-icons emoticons_satisfied lg"></i>
+                          <i class="now-ui-icons emoticons_satisfied lg"></i>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="3" id="defaultCheck3">
+                        <label class="form-check-label" for="defaultCheck3">
+                          <i class="now-ui-icons emoticons_satisfied lg"></i>
+                          <i class="now-ui-icons emoticons_satisfied lg"></i>
+                          <i class="now-ui-icons emoticons_satisfied lg"></i>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="2" id="defaultCheck4">
+                        <label class="form-check-label" for="defaultCheck4">
+                          <i class="now-ui-icons emoticons_satisfied lg"></i>
+                          <i class="now-ui-icons emoticons_satisfied lg"></i>
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="1" id="defaultCheck5">
+                        <label class="form-check-label" for="defaultCheck5"><i class="now-ui-icons emoticons_satisfied lg"></i></label>
+                      </div>
+                    </div>
+                <div>
+                  <label>Rango de precios</label>
+                  <div class="d-flex justify-content-between">
+                      <div class="form-group"> <input type="number" class="form-control" name="preciosDesde" placeholder="Desde" > </div>
+                      <div class="form-group"> <input type="number" class="form-control" name="preciosHasta" placeholder="Hasta"> </div>
+                  </div>
+                  <label>Rango de etario</label>
+                  <div class="d-flex justify-content-between">
+                      <div class="form-group"> <input type="number" class="form-control datepicker-game" placeholder="Desde" name="etarioDesde"> </div>
+                      <div class="form-group"> <input type="number" class="form-control datepicker-game" name="etarioHasta" placeholder="Hasta"> </div>
+                  </div>
+                  
+                </div>
+                <div>
+                  <label for="generos">Genero</label>
+                  <select class="form-control" id="generos">
+                    <option value="Todos">Todos</option>
+                    <option value="Acción">Acción</option>
+                    <option value="Deportes">Deportes</option>
+                    <option value="Carreras">Carreras</option>
+                    <option value="Ingenio">Ingenio</option>
+                  </select>
+                  <div class="col-md-12"><button class="btn mt-4 mb-3 btn-light rounded btn-lg text-primary" type="button">Aplicar</button></div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+  <div class="py-5">
+        <div class="container">
+          <div class="row">
+            <div class="text-center col-md-12 ">
+              <div id="banner-home">
+                <div class="row">
+                  <div class="col-md-4 offset-md-3 pt-4 pb-4 ">
+                      <h1>Solo por hoy!</h1>
+                      <h3>Ofertas por fiestas</h3>
+                      <a class="btn rounded border-light border btn-outline-light orange" href="raceGame.html">Ver listado</a>
+                  </div>
+                  <div class="col-md-5 text-left pl-10">
+                      <img src="assets/img/elemento1.png" class="bannerElements">
+                      <img src="assets/img/elemento2.png" class="bannerElements delay-2">
+                      <img src="assets/img/elemento3.png" class="bannerElements delay-3">
+                    </div>
+                </div>
+              </div>
+              <h1><br>Estrenos</h1>
+              <div id="carousel1" class="carousel slide carousel-fade " data-ride="carousel" data-interval="false">
+                <div class="carousel-inner no-padding ">
+                  <div class="carousel-item active">
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego15.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Pokémon</h5>
+                          <p class="card-text">Precio:$700</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/4enlinea.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">4 in line</h5>
+                          <p class="card-text">Precio:$700</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/raceGame.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Road Game</h5>
+                          <p class="card-text">Precio:$700</p> <a href="raceInfo.html" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego18.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Donkey Kong<br></h5>
+                          <p class="card-text">Precio:$700</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego15.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Pokémon</h5>
+                          <p class="card-text">Precio:$700</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/4enlinea.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">4 in line</h5>
+                          <p class="card-text">Precio:$700</p> <a href="#" class="btn btn-primary" onclick="window.location.href='juego.html'">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/raceGame.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Road Game</h5>
+                          <p class="card-text">Precio:$700</p> <a href="raceInfo.html" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego18.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Donkey Kong<br></h5>
+                          <p class="card-text">Precio:$700</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego15.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Pokémon</h5>
+                          <p class="card-text">Precio:$700</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/4enlinea.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">4 in line</h5>
+                          <p class="card-text">Precio:$700</p> <a href="#" class="btn btn-primary" onclick="window.location.href='juego.html'">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/raceGame.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Road Game</h5>
+                          <p class="card-text">Precio:$700</p> <a href="raceInfo.html" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego18.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Donkey Kong<br></h5>
+                          <p class="card-text">Precio:$700</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego15.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Pokémon</h5>
+                          <p class="card-text">Precio:$700</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/4enlinea.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">4 in line</h5>
+                          <p class="card-text">Precio:$700</p> <a href="#" class="btn btn-primary" onclick="window.location.href='juego.html'">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/raceGame.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Road Game</h5>
+                          <p class="card-text">Precio:$700</p> <a href="raceInfo.html" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego18.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Donkey Kong<br></h5>
+                          <p class="card-text">Precio:$700</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego15.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Pokémon</h5>
+                          <p class="card-text">Precio:$700</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/4enlinea.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">4 in line</h5>
+                          <p class="card-text">Precio:$700</p> <a href="#" class="btn btn-primary" onclick="window.location.href='juego.html'">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/raceGame.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Road Game</h5>
+                          <p class="card-text">Precio:$700</p> <a href="raceInfo.html" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego18.jpg" alt="Card image cap">
+                        <div class="card-body">
+                          <h5 class="card-title">Donkey Kong<br></h5>
+                          <p class="card-text">Precio:$700</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ol class="carousel-indicators">
+                    <li data-target="#carousel1" data-slide-to="0" class=""> </li>
+                    <li data-target="#carousel1" data-slide-to="1" class="active"> </li>
+                    <li data-target="#carousel1" data-slide-to="2" class=""> </li>
+                    <li data-target="#carousel1" data-slide-to="3" class=""> </li>
+                    <li data-target="#carousel1" data-slide-to="4" class=""> </li>
+                  </ol>
+                  <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span></a>
+                  <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span></a>
+                </div>
+              </div>
+              <div class="text-center col-md-12">
+                <h1 class=""><br>Destacados</h1>
+                <div id="carousel2" class="carousel slide carousel-fade " data-ride="carousel" data-interval="false">
+                  <div class="carousel-inner no-padding ">
+                    <div class="carousel-item">
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego19.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Dragon Nest</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego11.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Flyff</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego13.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Grand theft auto</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego10.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title" contenteditable="true">Dark souls</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego19.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Dragon Nest</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego11.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Flyff</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego13.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Grand theft auto</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego10.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title" contenteditable="true">Dark souls</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego19.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Dragon Nest</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego11.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Flyff</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego13.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Grand theft auto</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego10.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title" contenteditable="true">Dark souls</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item">
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego19.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Dragon Nest</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego11.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Flyff</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego13.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Grand theft auto</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego10.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title" contenteditable="true">Dark souls</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="carousel-item active">
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego19.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Dragon Nest</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego11.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Flyff</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego13.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title">Grand theft auto</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="card"> <img class="card-img-top" src="assets/img/juegos/juego10.jpg" alt="Card image cap">
+                          <div class="card-body">
+                            <h5 class="card-title" contenteditable="true">Dark souls</h5>
+                            <p class="card-text">Precio:$800</p> <a href="#" class="btn btn-primary">Ver más <i class="now-ui-icons ui-1_simple-add lg"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <ol class="carousel-indicators">
+                      <li data-target="#carousel2" data-slide-to="0" class=""> </li>
+                      <li data-target="#carousel2" data-slide-to="1" class=""> </li>
+                      <li data-target="#carousel2" data-slide-to="2" class=""> </li>
+                      <li data-target="#carousel2" data-slide-to="3" class="active"> </li>
+                      <li data-target="#carousel2" data-slide-to="4" class=""> </li>
+                    </ol>
+                    <a class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span></a>
+                    <a class="carousel-control-next" href="#carousel2" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span></a>
+                  </div>
+                </div>
+              </div>
+              <div class="pt-5" >
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12 text-center d-md-flex align-items-center"> <i class="d-block fa fa-stop-circle fa-2x mr-md-5 text-primary"></i>
+                      <ul class="nav mx-md-auto d-flex justify-content-center">
+                        <li class="nav-item"> <a class="nav-link active" href="#">Home</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">Destacados</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="#">Estrenos</a> </li>
+                      </ul>
+                      <div class="row">
+                        <div class="col-md-12 d-flex align-items-center justify-content-md-between justify-content-center my-2"> <a href="#">
+                            <i class="d-block fa fa-facebook-official text-muted fa-lg mx-2"></i>
+                          </a> <a href="#">
+                            <i class="d-block fa fa-instagram text-muted fa-lg mx-2"></i>
+                          </a> <a href="#">
+                            <i class="d-block fa fa-twitter text-muted fa-lg ml-2"></i>
+                          </a> </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 text-center">
+                      <p class="mt-2 mb-0" contenteditable="true">© 2018 PlayStore. All rights reserved</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"></script>
+              <script src="assets/js/parallax.js"></script>
+              <script src="js/main.js"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>

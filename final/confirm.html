@@ -43,7 +43,7 @@
                     </button>
                   </li>
                   <li class="nav-item mx-3 mx-md-1">
-                      <button type="button" class="btn rounded border-light border btn-outline-light" onclick="window.location.href='login.html'"> Sign in <i class="fa fa-fw fa-user-circle"></i></button>
+                      <button type="button" class="btn rounded border-light border btn-outline-light" onclick="window.location.href='login.html'"> User's Name <i class="now-ui-icons ui-1_simple-remove lg"></i></button>
                   </li>
               </ul>
             </div>
@@ -131,26 +131,26 @@
           <div class="row">
               <div class="col-md-12">
                 <div class="row">
-                  <div class="col-md-2 offset-md-2 pt-2">
-                      <a class="btn rounded border-light border btn-outline-light orange disabled" href="historial.html">Historial</a>
+                  <div class="col-md-4 pt-2">
+                      <h4 class="grisado">Carrito de compras</h4>
                   </div>
-                  <div class="col-md-5">
-                      <h1 class="">Carrito de compras</h1>
+                  <div class="col-md-5 pt-2">
+                      <h4 class="grisado">Información de pago</h4>
                   </div>
-                  <div class="col-md-2 pt-2">
-                      <a class="btn rounded border-light border btn-outline-light orange" href="index.html">Seguir comprando</a>
+                  <div class="col-md-3">
+                      <h1>Confirmación</h1>
                   </div>
                 </div>
               </div>
               
               <div class="col-md-9 offset-md-2">
                 <ul class="list-group items-carrito">
+                    <h2 class="text-left">Items</h2>
                     <li class="list-group-item row">
                       <div class="text-left col-md-6">
                           <img class="card-img-top" src="assets/img/juegos/juego19.jpg">Dragon Nest
                       </div>
                       <div class="text-right col-md-5">$100,00 <br><span class="grisado">Antes: <span class="tachar">$150,00</span></span><br>
-                        <a href="url">eliminar</a>
                       <div>
                     </li> 
                     <li class="list-group-item row">
@@ -158,7 +158,6 @@
                             <img class="card-img-top" src="assets/img/juegos/juego11.jpg">Flyff
                         </div>
                         <div class="text-right col-md-5">$100,00 <br><span class="grisado">Antes: <span class="tachar">$150,00</span></span><br>
-                          <a href="url">eliminar</a>
                         <div>
                       </li> 
                     <li class="list-group-item row">
@@ -166,22 +165,52 @@
                             <img class="card-img-top" src="assets/img/juegos/raceGame.jpg">Road Game
                         </div>
                         <div class="text-right col-md-5">$100,00 <br><span class="grisado">Antes: <span class="tachar">$150,00</span></span><br>
-                          <a href="url">eliminar</a>
                         <div>
                     </li>
                 </ul>
                 <div class="row  pt-3">
-                    <div class="col-md-2 offset-md-2 pt-2">
-                        <a class="btn rounded border-light border btn-outline-light orange pago" href="login.html">Pagar</a>
+                    <div class="col-md-6 text-left">
+                        <h5 class="text-left">Metodo de pago: Visa ***27</h5>
                     </div>
-                    <div class="offset-md-3 col-md-1">Subtotal <br><span class="grisado">Descuento:</span><br>
-                      <span class="descatarPrecio">Total</span> 
+                    <div class="col-md-6 text-right">
+                        <h5 class="text-right">Total a pagar: $300,00</h5>
                     </div>
-                    <div class="text-right col-md-3">$100,00 <br><span class="grisado">-$150,00</span><br>
-                      <span class="descatarPrecio">$300,00</span>
-                    <div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 offset-md-3 pading28">
+                        <a class="btn rounded border-light border btn-outline-light btn-return" href="pago.html">Volver</a>
+                    </div>
+                    <div class="col-md-3 pt-4">
+                        <a class="btn rounded border-light border btn-outline-light orange pago" data-toggle="modal" data-target="#myModal">Confirmar</a>
+                    </div>
                 </div>
               </div>
+              <div class="container">
+                
+                  <!-- The Modal -->
+                  <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content ">
+                      
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title text-center">Pago Exitoso</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <p>¡Gracias por su compra!</p>
+                          </div>
+                        
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <a class="btn rounded border-light border btn-outline-light btn-success" href="indexLogueado.html">Aceptar</a>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
               <div class="text-center col-md-12 pt-5" >
                 <div class="container">
                   <div class="row">
@@ -209,11 +238,11 @@
                   </div>
                 </div>
               </div>
-              <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"></script>
+              
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
               <script src="assets/js/parallax.js"></script>
               <script src="js/main.js"></script>
-              <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
             </div>
           </div>
         </div>

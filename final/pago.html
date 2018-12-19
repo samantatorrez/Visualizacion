@@ -43,7 +43,7 @@
                     </button>
                   </li>
                   <li class="nav-item mx-3 mx-md-1">
-                      <button type="button" class="btn rounded border-light border btn-outline-light" onclick="window.location.href='login.html'"> Sign in <i class="fa fa-fw fa-user-circle"></i></button>
+                      <button type="button" class="btn rounded border-light border btn-outline-light" onclick="window.location.href='login.html'"> User's Name <i class="now-ui-icons ui-1_simple-remove lg"></i></button>
                   </li>
               </ul>
             </div>
@@ -131,26 +131,26 @@
           <div class="row">
               <div class="col-md-12">
                 <div class="row">
-                  <div class="col-md-2 offset-md-2 pt-2">
-                      <a class="btn rounded border-light border btn-outline-light orange disabled" href="historial.html">Historial</a>
+                  <div class="col-md-4 pt-2">
+                      <h4 class="grisado">Carrito de compras</h4>
                   </div>
                   <div class="col-md-5">
-                      <h1 class="">Carrito de compras</h1>
+                      <h1 class="">Información de pago</h1>
                   </div>
-                  <div class="col-md-2 pt-2">
-                      <a class="btn rounded border-light border btn-outline-light orange" href="index.html">Seguir comprando</a>
+                  <div class="col-md-3 pt-2">
+                      <h4 class="grisado">Confirmación</h4>
                   </div>
                 </div>
               </div>
               
               <div class="col-md-9 offset-md-2">
                 <ul class="list-group items-carrito">
+                    <h2 class="text-left">Items</h2>
                     <li class="list-group-item row">
                       <div class="text-left col-md-6">
                           <img class="card-img-top" src="assets/img/juegos/juego19.jpg">Dragon Nest
                       </div>
                       <div class="text-right col-md-5">$100,00 <br><span class="grisado">Antes: <span class="tachar">$150,00</span></span><br>
-                        <a href="url">eliminar</a>
                       <div>
                     </li> 
                     <li class="list-group-item row">
@@ -158,7 +158,6 @@
                             <img class="card-img-top" src="assets/img/juegos/juego11.jpg">Flyff
                         </div>
                         <div class="text-right col-md-5">$100,00 <br><span class="grisado">Antes: <span class="tachar">$150,00</span></span><br>
-                          <a href="url">eliminar</a>
                         <div>
                       </li> 
                     <li class="list-group-item row">
@@ -166,20 +165,104 @@
                             <img class="card-img-top" src="assets/img/juegos/raceGame.jpg">Road Game
                         </div>
                         <div class="text-right col-md-5">$100,00 <br><span class="grisado">Antes: <span class="tachar">$150,00</span></span><br>
-                          <a href="url">eliminar</a>
                         <div>
                     </li>
                 </ul>
                 <div class="row  pt-3">
-                    <div class="col-md-2 offset-md-2 pt-2">
-                        <a class="btn rounded border-light border btn-outline-light orange pago" href="login.html">Pagar</a>
+                    <div class="col-md-2 text-left">
+                        <a href="url" class="">Agregar cupón</a>
                     </div>
-                    <div class="offset-md-3 col-md-1">Subtotal <br><span class="grisado">Descuento:</span><br>
-                      <span class="descatarPrecio">Total</span> 
+                    <div class="offset-md-5 col-md-1">
+                      <span class="descatarPrecio text-right">Total:</span> 
                     </div>
-                    <div class="text-right col-md-3">$100,00 <br><span class="grisado">-$150,00</span><br>
+                    <div class="text-right col-md-3">
                       <span class="descatarPrecio">$300,00</span>
-                    <div>
+                    </div>
+                </div>
+                <h2 class="text-left">Forma de pago</h2>
+                <div class="row">
+                  <div class="col-md-8 offset-md-1">
+                    <form id="metodos-de-pago-form" class="form-row">
+                        <div class="form-check col-md-12">
+                            <input class="form-check-input" type="radio" name="paymethod" value="option1">
+                            <label class="form-check-label" for="tarjetaGuar">
+                              Tarjeta guardada - Nro.: ***27 - Expira: 06/2027 
+                            </label>
+                        </div>
+                        <div class="form-check col-md-12">
+                            <input class="form-check-input" type="radio" name="paymethod" value="option2" checked>
+                            <label class="form-check-label" for="tarjetaNue">
+                              Nueva tarjeta
+                            </label>
+                          </div>
+                        <div class="form-group offset-md-2 col-md-8">
+                          <label for="tarjetaNro">Número de la tarjeta</label>
+                          <input type="text" class="form-control" name="tarjetaNro" placeholder="Número de la tarjeta">
+                        </div>
+                        <div class="form-group offset-md-2 col-md-8">
+                            <label for="tarjetaProp">Propietario</label>
+                            <input type="text" class="form-control" name="tarjetaProp" placeholder="Nombre que aparece en la tarjeta">
+                          </div>
+                          <div class="form-group offset-md-2 col-md-4">
+                              <label for="mes">Fecha de vencimiento</label>
+                              <select id="mes" name="mes" class="form-control minimal">
+                                <option selected>Mes</option>
+                                <option>Enero</option>
+                                <option>Febrero</option>
+                                <option>Marzo</option>
+                                <option>Abril</option>
+                                <option>Mayo</option>
+                                <option>Junio</option>
+                                <option>Julio</option>
+                                <option>Agosto</option>
+                                <option>Septiembre</option>
+                                <option>Octubre</option>
+                                <option>Noviembre</option>
+                                <option>Diciembre</option>
+                              </select>
+                          </div>
+                          <div class="form-group col-md-2 pading28">
+                              <select id="anio" name="anio" class="form-control minimal">
+                                <option selected>Año</option>
+                                <option>2019</option>
+                                <option>2020</option>
+                                <option>2021</option>
+                                <option>2022</option>
+                                <option>2023</option>
+                                <option>2024</option>
+                              </select>
+                          </div>
+                          <div class="form-group offset-md-2 col-md-4">
+                              <label for="exampleInputEmail1">Código de seguridad</label>
+                              <input type="text" class="form-control" placeholder="CVC">
+                              
+                          </div>
+                          <div  class="form-group col-md-1 pt-4" data-toggle="tooltip" data-placement="top" title="El número se encuentra en la parte trasera de la tarjeta" >
+                              <img class="back" src="assets/img/cardback.png" />
+                          </div>
+                          <div class="form-check col-md-12">
+                              <input class="form-check-input" type="radio" name="paymethod" value="option3">
+                              <label class="form-check-label" for="paypal">
+                                Cuenta de <img id="paypal-logo" src="assets/img/paypal2.png">
+                              </label>
+                          </div>
+                    </form>
+                    <div class="row">
+                        <div class="col-md-2 offset-md-2 pading28">
+                            <a class="btn rounded border-light border btn-outline-light btn-return" href="carrito.html">Volver</a>
+                        </div>
+                        <div class="col-md-3 pt-4">
+                            <a class="btn rounded border-light border btn-outline-light orange pago" href="confirm.html">Continuar</a>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div id="bannerPago">
+                        <img id="juegoBanner" src="assets/img/juegos/4enlinea.jpg" >
+                        <img id="confetiBanner" src="assets/img/confeti.png" >
+                    </div>
+                      
+                  </div>
                 </div>
               </div>
               <div class="text-center col-md-12 pt-5" >
@@ -209,11 +292,9 @@
                   </div>
                 </div>
               </div>
-              <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"></script>
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
               <script src="assets/js/parallax.js"></script>
               <script src="js/main.js"></script>
-              <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
             </div>
           </div>
         </div>

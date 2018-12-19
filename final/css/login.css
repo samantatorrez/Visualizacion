@@ -1,0 +1,186 @@
+/*! CSS Used from: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css */
+.fa{display:inline-block;font:normal normal normal 14px/1 FontAwesome;font-size:inherit;text-rendering:auto;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.fa-lg{font-size:1.33333333em;line-height:.75em;vertical-align:-15%;}
+.fa-2x{font-size:2em;}
+.fa-twitter:before{content:"\f099";}
+.fa-instagram:before{content:"\f16d";}
+.fa-facebook-official:before{content:"\f230";}
+.fa-stop-circle:before{content:"\f28d";}
+/*! CSS Used from: https://samantatorrez.github.io/Visualizacion/prototipo/now-ui-kit.css */
+:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#f96332;--secondary:#888;--success:#18ce0f;--info:#2CA8FF;--warning:#FFB236;--danger:#FF3636;--light:#FFFFFF;--dark:#2c2c2c;--gray:#EEEEEE;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";--font-family-monospace:SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+*,*::before,*::after{box-sizing:border-box;}
+html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);}
+body{margin:0;font-family:Montserrat;font-size:0.875rem;font-weight:400;line-height:1.6;color:#292b2c;text-align:left;background-color:white;}
+p{margin-top:0;margin-bottom:1rem;}
+ul{margin-top:0;margin-bottom:1rem;}
+a{color:#f96332;text-decoration:none;background-color:transparent;-webkit-text-decoration-skip:objects;}
+a:hover{color:#d83a06;text-decoration:none;}
+img{vertical-align:middle;border-style:none;}
+label{display:inline-block;margin-bottom:.5rem;}
+button{border-radius:0;}
+button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color;}
+input,button{margin:0;font-family:inherit;font-size:inherit;line-height:inherit;}
+button,input{overflow:visible;}
+button{text-transform:none;}
+button,html [type="button"]{-webkit-appearance:button;}
+button::-moz-focus-inner,[type="button"]::-moz-focus-inner{padding:0;border-style:none;}
+.img-fluid{max-width:100%;height:auto;}
+.container{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto;}
+@media (min-width: 576px){
+.container{max-width:540px;}
+}
+@media (min-width: 768px){
+.container{max-width:720px;}
+}
+@media (min-width: 992px){
+.container{max-width:960px;}
+}
+@media (min-width: 1200px){
+.container{max-width:1140px;}
+}
+.row{display:flex;flex-wrap:wrap;margin-right:-15px;margin-left:-15px;}
+.col-10,.col,.col-md-6,.col-md-12,.col-xl-4{position:relative;width:100%;min-height:1px;padding-right:15px;padding-left:15px;}
+.col{flex-basis:0;flex-grow:1;max-width:100%;}
+.col-10{flex:0 0 83.33333%;max-width:83.33333%;}
+@media (min-width: 768px){
+.col-md-6{flex:0 0 50%;max-width:50%;}
+.col-md-12{flex:0 0 100%;max-width:100%;}
+}
+@media (min-width: 1200px){
+.col-xl-4{flex:0 0 33.33333%;max-width:33.33333%;}
+}
+.form-control{display:block;width:100%;padding:0.55rem 1.3rem;font-size:0.875rem;line-height:1.6;color:inherit;background-color:rgba(255, 255, 255, 0.1);background-clip:padding-box;border:1px solid #ced4da;border-radius:2.5rem;transition:border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;}
+.form-control::-ms-expand{background-color:transparent;border:0;}
+.form-control:focus{color:inherit;background-color:rgba(255, 255, 255, 0.4);border-color:#fdc1ae;outline:0;box-shadow:none;}
+.form-control::placeholder{color:rgba(41, 43, 44, 0.25);opacity:1;}
+.form-control:disabled{background-color:#e9ecef;opacity:1;}
+.form-group{margin-bottom:1rem;}
+.btn{display:inline-block;font-weight:400;text-align:center;white-space:nowrap;vertical-align:middle;user-select:none;border:1px solid transparent;padding:0.55rem 1.3rem;font-size:0.875rem;line-height:1.2rem;border-radius:0.25rem;transition:color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;}
+.btn:hover,.btn:focus{text-decoration:none;}
+.btn:focus{outline:0;box-shadow:none;}
+.btn:disabled{opacity:0.65;}
+.btn:not(:disabled):not(.disabled){cursor:pointer;}
+.btn-primary{color:#fff;background-color:#f96332;border-color:#f96332;}
+.btn-primary:hover{color:#fff;background-color:#f8470d;border-color:#f14107;}
+.btn-primary:focus{box-shadow:0 0 0 0.2rem rgba(249, 99, 50, 0.5);}
+.btn-primary:disabled{color:#fff;background-color:#f96332;border-color:#f96332;}
+.btn-light{color:#888;background-color:#FFFFFF;border-color:#FFFFFF;}
+.btn-light:hover{color:#888;background-color:#ececec;border-color:#e6e6e6;}
+.btn-light:focus{box-shadow:0 0 0 0.2rem rgba(255, 255, 255, 0.5);}
+.btn-light:disabled{color:#888;background-color:#FFFFFF;border-color:#FFFFFF;}
+.btn-lg{padding:0.95rem 3rem;font-size:1.09375rem;line-height:1.5;border-radius:0.3rem;}
+.input-group{position:relative;display:flex;flex-wrap:wrap;align-items:stretch;width:100%;}
+.input-group > .form-control{position:relative;flex:1 1 auto;width:1%;margin-bottom:0;}
+.input-group > .form-control:focus{z-index:3;}
+.input-group > .form-control:not(:first-child){border-top-left-radius:0;border-bottom-left-radius:0;}
+.input-group-prepend{display:flex;}
+.input-group-prepend{margin-right:-1px;}
+.input-group-text{display:flex;align-items:center;padding:0.55rem 1.3rem;margin-bottom:0;font-size:0.875rem;font-weight:400;line-height:1.6;color:rgba(41, 43, 44, 0.8);text-align:center;white-space:nowrap;background-color:rgba(255, 255, 255, 0.1);border:1px solid #ced4da;border-radius:2.5rem;}
+.input-group > .input-group-prepend > .input-group-text{border-top-right-radius:0;border-bottom-right-radius:0;}
+.nav{display:flex;flex-wrap:wrap;padding-left:0;margin-bottom:0;list-style:none;}
+.nav-link{display:block;padding:0.7rem 1.4rem;}
+.nav-link:hover,.nav-link:focus{text-decoration:none;}
+.card{position:relative;display:flex;flex-direction:column;min-width:0;word-wrap:break-word;background-color:#fff;background-clip:border-box;border:0px solid rgba(0, 0, 0, 0.125);border-radius:0.25rem;}
+.card-body{flex:1 1 auto;padding:1.25rem;}
+.bg-primary{background-color:#f96332!important;}
+.bg-dark{background-color:#2c2c2c!important;}
+.border-0{border:0!important;}
+.border-light{border-color:#FFFFFF!important;}
+.rounded{border-radius:0.25rem!important;}
+.d-block{display:block!important;}
+.d-flex{display:flex!important;}
+@media (min-width: 768px){
+.d-md-flex{display:flex!important;}
+}
+.justify-content-center{justify-content:center!important;}
+.align-items-center{align-items:center!important;}
+@media (min-width: 768px){
+.justify-content-md-between{justify-content:space-between!important;}
+}
+.mb-0{margin-bottom:0!important;}
+.mt-2,.my-2{margin-top:0.5rem!important;}
+.mx-2{margin-right:0.5rem!important;}
+.mb-2,.my-2{margin-bottom:0.5rem!important;}
+.ml-2,.mx-2{margin-left:0.5rem!important;}
+.mb-3{margin-bottom:1rem!important;}
+.mt-4,.my-4{margin-top:1.5rem!important;}
+.my-4{margin-bottom:1.5rem!important;}
+.mt-5{margin-top:3rem!important;}
+.pt-2{padding-top:0.5rem!important;}
+.py-3{padding-top:1rem!important;}
+.py-3{padding-bottom:1rem!important;}
+.px-4{padding-right:1.5rem!important;}
+.px-4{padding-left:1.5rem!important;}
+.py-5{padding-top:3rem!important;}
+.py-5{padding-bottom:3rem!important;}
+.mx-auto{margin-right:auto!important;}
+.mx-auto{margin-left:auto!important;}
+@media (min-width: 768px){
+.mr-md-5{margin-right:3rem!important;}
+.mx-md-auto{margin-right:auto!important;}
+.mx-md-auto{margin-left:auto!important;}
+}
+.text-left{text-align:left!important;}
+.text-right{text-align:right!important;}
+.text-center{text-align:center!important;}
+.text-primary{color:#f96332!important;}
+.text-secondary{color:#888!important;}
+.text-light{color:#FFFFFF!important;}
+a.text-light:hover,a.text-light:focus{color:#e6e6e6!important;}
+.text-muted{color:#9A9A9A!important;}
+@media print{
+*,*::before,*::after{text-shadow:none!important;box-shadow:none!important;}
+a:not(.btn){text-decoration:underline;}
+img{page-break-inside:avoid;}
+p{orphans:3;widows:3;}
+body{min-width:992px!important;}
+.container{min-width:992px!important;}
+}
+.btn{font-size:0.74375rem;}
+.btn.btn-primary{color:#fff;background-color:#f96332;border-color:transparent;}
+.btn.btn-primary:hover{color:#fff;background-color:#fa7f57;border-color:transparent;}
+.btn.btn-primary:focus{box-shadow:0 0 0 0.2rem rgba(0, 0, 0, 0.5);}
+.btn.btn-primary:disabled{color:#fff;background-color:#f96332;border-color:transparent;}
+.btn.btn-primary:disabled:focus{box-shadow:none!important;}
+.btn.btn-light{color:#888;background-color:#FFFFFF;border-color:transparent;}
+.btn.btn-light:hover{color:#888;background-color:white;border-color:transparent;}
+.btn.btn-light:focus{box-shadow:0 0 0 0.2rem rgba(0, 0, 0, 0.5);}
+.btn.btn-light:disabled{color:#888;background-color:#FFFFFF;border-color:transparent;}
+.btn.btn-light:disabled:focus{box-shadow:none!important;}
+.card{box-shadow:0px 5px 25px 0px rgba(0, 0, 0, 0.2);}
+form .form-control{font-size:0.74375rem;}
+.input-group{background-color:rgba(255, 255, 255, 0.1);border-radius:2.5rem;border:1px solid #ced4da;transition:all 0.3s;}
+.input-group .input-group-prepend span,.input-group .form-control{background:transparent;}
+.input-group *{border:none;}
+.input-group .input-group-prepend span{padding-right:0;}
+.bg-primary{color:#fff;}
+.bg-primary input::placeholder{color:rgba(255, 255, 255, 0.8);}
+.bg-primary .input-group-text{color:#fff;}
+.bg-dark{color:#fff;}
+.bg-dark input::placeholder{color:rgba(255, 255, 255, 0.8);}
+.bg-dark .input-group-text{color:#fff;}
+html,body{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;}
+.rounded{border-radius:30px!important;}
+/*! CSS Used from: https://samantatorrez.github.io/Visualizacion/prototipo/assets/css/nucleo-icons.css */
+.now-ui-icons{display:inline-block;font:normal normal normal 16px/1 'Nucleo Outline';font-size:inherit;speak:none;text-transform:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+.now-ui-icons.lg{font-size:1.3em;vertical-align:-20%;}
+.now-ui-icons.text_caps-small:before{content:"\ea1b";}
+.now-ui-icons.users_circle-08:before{content:"\ea23";}
+/*! CSS Used fontfaces */
+@font-face{font-family:'FontAwesome';src:url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.eot?v=4.7.0');src:url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.eot#iefix&v=4.7.0') format('embedded-opentype'),url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.woff?v=4.7.0') format('woff'),url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'),url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');font-weight:normal;font-style:normal;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;src:local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_aZA3gTD_u50.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;src:local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_aZA3g3D_u50.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;src:local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_aZA3gbD_u50.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;src:local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_aZA3gfD_u50.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:200;src:local('Montserrat ExtraLight'), local('Montserrat-ExtraLight'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_aZA3gnD_g.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;src:local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;src:local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;src:local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;src:local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:400;src:local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;src:local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3gTD_u50.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;src:local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3g3D_u50.woff2) format('woff2');unicode-range:U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;src:local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3gbD_u50.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;src:local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3gfD_u50.woff2) format('woff2');unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700;src:local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3gnD_g.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+@font-face{font-family:'Nucleo Outline';src:url("https://samantatorrez.github.io/Visualizacion/prototipo/assets/fonts/nucleo-outline.eot");src:url("https://samantatorrez.github.io/Visualizacion/prototipo/assets/fonts/nucleo-outline.eot") format("embedded-opentype"), url("https://samantatorrez.github.io/Visualizacion/prototipo/assets/fonts/nucleo-outline.woff2") format("woff2"), url("https://samantatorrez.github.io/Visualizacion/prototipo/assets/fonts/nucleo-outline.woff") format("woff"), url("https://samantatorrez.github.io/Visualizacion/prototipo/assets/fonts/nucleo-outline.ttf") format("truetype");font-weight:normal;font-style:normal;}

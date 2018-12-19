@@ -8,9 +8,9 @@
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <title>Juego</title>
+  <title>Juego Info</title>
+  <link rel="stylesheet" href="css/main.css" type="text/css">
   <link rel="stylesheet" href="assets/css/nucleo-icons.css" type="text/css">
-  <link rel="stylesheet" href="css/iconos.css" type="text/css">
   <link rel="stylesheet" href="css/styles.css" type="text/css">
 </head>
 
@@ -128,41 +128,72 @@
     <br>
   </div>
 
-  <h1 id="gameName">Road Game</h1>
-  <div>
-    <dif class="container">
-      <div class="row">
-        <div class="col">
-            <div id="puntaje">
-                <h2>Road Game</h2>
-                <div>
-                    <label>Puntaje:</label>
-                    <span id="puntuacion">0</span>
+  <div class="mt-5 pt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col p-3">
+            <div id="carousel2" class="carousel slide" data-ride="carousel" data-interval="5000">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="assets/img/race.jpg">
+                  <div class="carousel-caption">
+                    <div class="row">
+                      <div class="col p-3">
+                        <h3>Race Game</h3>
+                      </div>
+                      <div class="col p-4">
+                        <label>Ranking</label>
+                        <i class="now-ui-icons emoticons_satisfied lg"></i>
+                        <i class="now-ui-icons emoticons_satisfied lg"></i>
+                        <i class="now-ui-icons emoticons_satisfied lg"></i>
+                        <i class="now-ui-icons emoticons_satisfied lg"></i>
+                        <i class="now-ui-icons emoticons_satisfied lg"></i>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <img id="volumenImg" src="assets/img/race/volume.png" >
-                <input id="volumen" type="range"  min="0" max="0.05" step="0.01"/>
+                <div class="carousel-item"> <img class="d-block w-100" src="assets/img/race2.jpg">
+                  <div class="carousel-caption">
+                    <div class="row">
+                      <div class="col p-3">
+                        <h3>Road Game</h3>
+                      </div>
+                      <div class="col p-4">
+                        <label>Ranking</label>
+                        <i class="now-ui-icons emoticons_satisfied lg"></i>
+                        <i class="now-ui-icons emoticons_satisfied lg"></i>
+                        <i class="now-ui-icons emoticons_satisfied lg"></i>
+                        <i class="now-ui-icons emoticons_satisfied lg"></i>
+                        <i class="now-ui-icons emoticons_satisfied lg"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span></a>
+              <a class="carousel-control-next" href="#carousel2" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span></a>
             </div>
-            <div id="container" >
-              <button id="start">Start</button>
-              <div id="car"></div>      
-              <div id ="enemy1"></div>
-              <div id ="enemy2"></div>
-              <div id ="enemy3"></div>
-              <div id ="star1"></div>
-              <div id ="star2"></div>
-              <div id ="star3"></div>
+          </div>
+          <div class="col-md-5 p-md-5 p-3 d-flex flex-column justify-content-center">
+            <h1 class="">Precio: $100,00</h1>
+            <h2 class="grisado">Anterior: <span class="tachar">$150,00</span> </h2><a class="btn rounded border-light border btn-outline-light orange" href="carrito.html">Añadir al carrito</a>
           </div>
         </div>
-  </div>
+        <div class="row">
+        </div>
+      </div>
+    </div>
 
   <div class="pt-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-7">
           <p class="lead">Descripción</p>
           <p class="">Juego de esquivar coches, el jugador que resiste mas tiempo tiene mejor puntaje. Junta mas estrellas para obtener mejor puntaje.<br><br></p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5">
           <p class="lead">¿Cómo jugar ?</p>
           <div class="row">
             <div class="col-md-5">
@@ -180,20 +211,20 @@
   <div class="pb-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-7">
+            <p class="lead">Comentarios</p>
+            <ul id="comentarios" class="list-group scrollRanking">
+            </ul>
+        </div>
+        <div class="col-md-5">
           <p class="lead">Ranking</p>
-          <ul id="rankingList" class="list-group scrollRanking">
+          <ul id="rankingList" class="list-group">
             <li class="list-group-item d-flex justify-content-between align-items-center">1. Dara Torrez <span class="badge badge-primary badge-pill">Puntaje 800</span></li>
             <li class="list-group-item d-flex justify-content-between align-items-center">2. Greiscol <span class="badge badge-primary badge-pill">Puntaje 700</span> </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">3. Harry Potter <span class="badge badge-primary badge-pill">Puntaje 100</span> </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">4. PuppyCat <span class="badge badge-primary badge-pill">Puntaje 50</span> </li>
             <li class="list-group-item d-flex justify-content-between align-items-center">5. Cho <span class="badge badge-primary badge-pill">Puntaje 10</span> </li>
           </ul>
-        </div>
-        <div class="col-md-6">
-            <p class="lead">Comentarios</p>
-            <ul id="comentarios" class="list-group scrollRanking">
-            </ul>
         </div>
       </div>
     </div>
@@ -228,7 +259,9 @@
     </div>
   </div>
   <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="assets/js/parallax.js"></script>
   <script src="js/race.js"></script>
   <script src="js/main.js"></script>
 </body>

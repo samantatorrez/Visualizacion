@@ -172,7 +172,7 @@
                 </ul>
                 <div class="row  pt-3">
                     <div class="col-md-2 offset-md-2 pt-2">
-                        <a class="btn rounded border-light border btn-outline-light orange pago" href="login.html">Pagar</a>
+                        <a class="btn rounded border-light border btn-outline-light orange pago" data-toggle="modal" data-target="#myModal">Pagar</a>
                     </div>
                     <div class="offset-md-3 col-md-1">Subtotal <br><span class="grisado">Descuento:</span><br>
                       <span class="descatarPrecio">Total</span> 
@@ -182,6 +182,33 @@
                     <div>
                 </div>
               </div>
+              <div class="container">
+                
+                  <!-- The Modal -->
+                  <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                      <div class="modal-content ">
+                      
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                          <h4 class="modal-title text-center orange">¿Posee ya una cuenta registrada?</h4>
+                        </div>
+
+                        <div class="modal-body">
+                            <p>(En caso de no tener cuenta, le ofrecemos una registración express)</p>
+                          </div>
+                        
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <a class="btn rounded border-light border btn-outline-light orange pago" href="login.html">Si</a>
+                            <a class="btn rounded border-light border btn-outline-light btn-return" href="pagoFormEspecial.html">No, quiero registrarme</a>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
               <div class="text-center col-md-12 pt-5" >
                 <div class="container">
                   <div class="row">

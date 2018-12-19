@@ -13,7 +13,7 @@ $(document).ready(function(){
                 event_data += '<div class="commenterImage"><img id="imgUser" src="assets/img/'+value.img+'" />';
                 event_data += '<span class="date name">'+value.name+'</span><span class="date sub-text">'+ value.date+'</span></div>';
                 event_data += '<div class="commentText"<p>'+value.body+'</p></div>';
-                event_data += '<div class="like-container"><div class="like"><img src="assets/img/heart.png"/><span>'+value.likes+'</span></div></div>';
+                event_data += '<div class="like-container"><div class="like" onclick="hide(this)"><img  src="assets/img/heart.png"/><span>'+value.likes+'</span></div></div>';
                 event_data += '</div>';
               }
               else {
@@ -23,7 +23,7 @@ $(document).ready(function(){
             });
             event_data += `</div>
               <nav aria-label="Page navigation example">
-                <ul class="pagination ">
+                <ul class="pagination pt-5">
                   <li class="page-item" data-page="-" >
                     <a href="#" class="page-link" >Previous</a>
                   </li>
@@ -49,6 +49,10 @@ $(document).ready(function(){
     })
 
     $('#carousel2').carousel({
+      interval: 2500
+    })
+
+    $('#carousel3').carousel({
       interval: 2500
     })
 
@@ -84,4 +88,11 @@ $(document).ready(function(){
             //stuff to do on mouse leave
         }
     });
+    
 });
+function hide(e) {
+  e.className += " disabled";
+  var counter = 0;
+  counter= e.getElementsByTagName("span")[0].innerHTML;
+  e.getElementsByTagName("span")[0].innerHTML= parseInt(counter,10) +1;
+}

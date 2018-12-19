@@ -417,11 +417,12 @@ a.disabled, .like.disabled {
     z-index: -1;
   }
   #bannerPago{
-      top: -75px;
+      top: -70px;
       background: url("../assets/img/banner2.jpg") no-repeat !important;
       height: 550px;
       background-size: 100% !important;
       overflow: hidden;
+      border: 2px solid rgb(0, 0, 0);
   }
   #juegoBanner, #bannerPago, #confetiBanner{
     position: relative;
